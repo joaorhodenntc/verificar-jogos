@@ -75,7 +75,7 @@ function verificarHorario() {
     }
     console.log("Horário servidor: " + horaAtualBrasilia + ":" + minutoAtualBrasilia)
     const data = agora.getUTCFullYear() +"-" + (agora.getUTCMonth() + 1) + "-" + agora.getUTCDate();
-    if(horaAtualBrasilia === 0 && minutoAtualBrasilia === 42){
+    if(horaAtualBrasilia === 22 && minutoAtualBrasilia === 0){
         try{
             analisarPartidas(data);
         } catch(error){
