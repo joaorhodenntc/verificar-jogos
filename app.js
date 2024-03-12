@@ -74,6 +74,7 @@ function verificarHorario() {
          horaAtualBrasilia = 24 + horaAtualBrasilia;
     }
     console.log("Horário servidor: " + horaAtualBrasilia + ":" + minutoAtualBrasilia)
+    console.log("Hora original: " + agora.getUTCHours())
     if(horaAtualBrasilia === 0 && minutoAtualBrasilia === 13){
         try{
             analisarPartidas("2024-03-12");
@@ -84,5 +85,7 @@ function verificarHorario() {
 }
 
 // Verifica o horário a cada minuto
-setInterval(verificarHorario, 30000);
+//setInterval(verificarHorario, 60000);
+
+verificarHorario()
 
