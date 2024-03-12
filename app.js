@@ -68,7 +68,7 @@ async function analisarPartidas(data) {
 
 function verificarHorario() {
     const agora = new Date();
-    let horaAtualBrasilia = agora.getUTCHours() - 2;
+    let horaAtualBrasilia = agora.getUTCHours() - 3;
     let minutoAtualBrasilia = agora.getUTCMinutes();
     if (horaAtualBrasilia < 0) {
          horaAtualBrasilia = 24 + horaAtualBrasilia;
