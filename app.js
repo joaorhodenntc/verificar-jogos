@@ -42,7 +42,7 @@ async function analisarPartidas(data) {
             if (oddHome <= 1.4 || oddAway <= 1.4) {
                 const idPartida = dados[i].match_id;
                 const pegarNomes = await obterNomes(idPartida);
-                if(pegarNomes[0].match_date == data){
+                if(pegarNomes[0].match_status != 'Finished'){
                     const nomeHome = pegarNomes[0].match_hometeam_name;
                     const nomeAway = pegarNomes[0].match_awayteam_name;
                     const horarioPartida = pegarNomes[0].match_time;
@@ -74,8 +74,8 @@ function verificarHorario() {
          horaAtualBrasilia = 24 + horaAtualBrasilia;
     }
     console.log("Horário servidor: " + horaAtualBrasilia + ":" + minutoAtualBrasilia)
-    let data = agora.getUTCFullYear() +"-" + (agora.getUTCMonth() + 1) + "-" + agora.getUTCDate();
-    if(horaAtualBrasilia === 0 && minutoAtualBrasilia === 26){
+    const data = agora.getUTCFullYear() +"-" + (agora.getUTCMonth() + 1) + "-" + agora.getUTCDate();
+    if(horaAtualBrasilia === 0 && minutoAtualBrasilia === 42){
         try{
             analisarPartidas(data);
         } catch(error){
@@ -84,7 +84,6 @@ function verificarHorario() {
     }
 }
 
-// Verifica o horário a cada minuto
-setInterval(verificarHorario, 30000);
+setInterval(verificarHorario, 60000);
 
 
