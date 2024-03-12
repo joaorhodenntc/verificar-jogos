@@ -74,10 +74,10 @@ function verificarHorario() {
          horaAtualBrasilia = 24 + horaAtualBrasilia;
     }
     console.log("Horário servidor: " + horaAtualBrasilia + ":" + minutoAtualBrasilia)
-    console.log("Hora original: " + agora.getUTCHours())
-    if(horaAtualBrasilia === 0 && minutoAtualBrasilia === 13){
+    let data = agora.getUTCFullYear() +"-" + (agora.getUTCMonth() + 1) + "-" + agora.getUTCDate();
+    if(horaAtualBrasilia === 0 && minutoAtualBrasilia === 26){
         try{
-            analisarPartidas("2024-03-12");
+            analisarPartidas(data);
         } catch(error){
             console.error(error);
         }
@@ -85,7 +85,6 @@ function verificarHorario() {
 }
 
 // Verifica o horário a cada minuto
-//setInterval(verificarHorario, 60000);
+setInterval(verificarHorario, 30000);
 
-verificarHorario()
 
