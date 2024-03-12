@@ -74,8 +74,12 @@ function verificarHorario() {
          horaAtualBrasilia = 24 + horaAtualBrasilia;
     }
     console.log("Horário servidor: " + horaAtualBrasilia + ":" + minutoAtualBrasilia)
-    if(horaAtualBrasilia === 0 && minutoAtualBrasilia === 8){
-        analisarPartidas();
+    if(horaAtualBrasilia === 0 && minutoAtualBrasilia === 11){
+        try{
+            analisarPartidas();
+        } catch(error){
+            console.error(error);
+        }
     }
 }
 
