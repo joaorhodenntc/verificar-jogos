@@ -74,9 +74,9 @@ function verificarHorario() {
          horaAtualBrasilia = 24 + horaAtualBrasilia;
     }
     console.log("Horário servidor: " + horaAtualBrasilia + ":" + minutoAtualBrasilia)
-    if(horaAtualBrasilia === 0 && minutoAtualBrasilia === 11){
+    if(horaAtualBrasilia === 0 && minutoAtualBrasilia === 13){
         try{
-            analisarPartidas();
+            analisarPartidas("2024-03-12");
         } catch(error){
             console.error(error);
         }
